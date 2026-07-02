@@ -138,10 +138,8 @@ async def id_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # --- NEW FUN & GAME COMMANDS ---
 
 async def slots_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # Inatuma mashine ya Casino inayozunguka yenyewe
     msg = await update.message.reply_dice(emoji="🎰")
     val = msg.dice.value
-    # Kwenye slots, ushindi mkubwa (Jackpot) huwa ni namba fulani maalum
     if val in [1, 22, 43, 64]:
         await update.message.reply_text(wm("🎉 **JACKPOT!!!** Umeshinda mchezo wa Casino! 🏆💰"))
     else:
@@ -177,14 +175,13 @@ async def love_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     percentage = random.randint(1, 100)
     
-    # Chagua comment kulingana na asilimia
     if percentage <= 20: comment = LOVE_COMMENTS[0]
     elif percentage <= 50: comment = LOVE_COMMENTS[1]
     elif percentage <= 75: comment = LOVE_COMMENTS[2]
     elif percentage <= 90: comment = LOVE_COMMENTS[3]
     else: comment = LOVE_COMMENTS[4]
 
-    love_report = f"❤️ **MITA YA UPENDO (LOVE MATCH)** ❤️\n\n👩‍❤️‍👨 **{user1}**  +  **{user2}**\n\n📊 **Asilimia:** {percentage}%\n💬 **Tathmini:** {comment}"
+    love_report = f"❤️ **MITA YA UPENDO (LOVE MATCH)** ❤️\n\n👩‍❤️‍👨 **{user1}** +  **{user2}**\n\n📊 **Asilimia:** {percentage}%\n💬 **Tathmini:** {comment}"
     await update.message.reply_text(wm(love_report))
 
 async def joke_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -426,4 +423,19 @@ def main():
     # Group settings
     app.add_handler(CommandHandler("antilink", antilink_command))
     app.add_handler(CommandHandler("antisticker", antisticker_command))
-    app.add_handler(CommandHandler("mute_group", mute_group_command)
+    app.add_handler(CommandHandler("mute_group", mute_group_command))
+    app.add_handler(CommandHandler("admins", admins_command))
+    app.add_handler(CommandHandler("ginfo", ginfo_command))
+
+    # Message Handlers na Text Filters
+    app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_incoming_messages))
+    
+    # Amri zisizojulikana (Unknown commands)
+    app.add_handler(MessageHandler(filters.COMMAND, unknown_command))
+
+    # Kuwasha Bot
+    print("Bot imewashwa rasmi... Run polling...")
+    app.run_polling()
+
+if __name__ == '__main__':
+    main()
