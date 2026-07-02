@@ -1,2 +1,2 @@
-python-telegram-bot==20.8
-logging
+python-telegram-bot==21.10
+anyio==4.4.0
