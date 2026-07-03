@@ -80,42 +80,31 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 ⚡ LUQMAN ON FIRE 🔥"""
     await update.message.reply_text(start_text)
 
-async def menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    menu_text = f"""
-╔═☠️═𒆜 {BOT_NAME} 𒆜═☠️═╗
-║ 👑 Owner: {OWNER_NAME}
-║ 🌍 Country: Tanzania
-║ ⚡ Prefix: /
-║ 🔥 Mode: {MODE}
-╠══════════════════════☠️
+async def     menu_text = f"""
+💀 {BOT_NAME} 💀
+👑 Owner: {OWNER_NAME}
+🌍 Country: Tanzania
+⚡ Prefix: /
+🔥 Mode: {MODE}
 
-║ 💀 GROUP CONTROL
-║ /ban, /unban, /kick
-║ /mute, /unmute, /warn
-║ /mute_group on/off - Funga kundi
-║ /antilink on/off - Block Links
-║ /antisticker on/off - Block Sticker
-║ /admins - Orodha ya Ma-admin
-║ /ginfo - Taarifa za Kundi
-║ /id - Angalia ID yako au ya Kundi
+💀 GROUP CONTROL
+/ban, /unban, /kick
+/mute, /unmute, /warn
+/mute_group on/off
+/antilink on/off
+/antisticker on/off
+/admins
+/ginfo
+/id
 
-╠══════════════════════☠️
-║ 🎮 MICHEZO & MANJONJO
-║ /slots - Cheza Casino ya Ukweli 🎰
-║ /dice - Rusha Kete ya Bahati 🎲
-║ /dart - Lenga Shabaha ya Mshale 🎯
-║ /football - Piga Penati ya Ushindi ⚽
-║ /love - Piga Hesabu za Upendo (Reply mtu) ❤️
-║ /joke - Pata Kichekesho cha Papo hapo 🤣
+🎮 MICHEZO & MANJONJO
+/slots, /dice, /dart
+/football, /love, /joke
 
-╠══════════════════════☠️
-║ 👑 OWNER SYSTEM
-║ /alive - Hali ya bot
-║ /ping - Kasi ya bot
-║ /owner - Mawasiliano ya mmiliki
-
-╚═☠️═ LUQMAN ON FIRE ═☠️═╝
+👑 OWNER SYSTEM
+/alive, /ping, /owner
 """
+
     await update.message.reply_text(wm(menu_text), parse_mode="Markdown")
 
 async def alive_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
