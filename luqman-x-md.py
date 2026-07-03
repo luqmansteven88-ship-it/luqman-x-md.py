@@ -4,6 +4,11 @@ from telegram import Update, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO
+)
+
 # --- CONFIGURATION ---
 BOT_NAME = "𓊈𒆜꯭𝆭̽ 𝐋ʋ̽զϻ̈̐𝛂ƞ̄ 𝛅͜𝐉»ً𒆜꧂"
 OWNER_NAME = "𝙇𝙐𝙌𝙈𝘼Ν 𝙎𝙅"
@@ -416,7 +421,12 @@ def main():
     app.add_handler(MessageHandler(filters.COMMAND, unknown_command))
 
     print("Bot imewashwa rasmi...")
-    app.run_polling()
+    app.run_polling(
+    poll_interval=2,
+    timeout=30,
+    drop_pending_updates=True,
+    allowed_updates=Update.ALL_TYPES
+    )
   
 
 if __name__ == '__main__':
