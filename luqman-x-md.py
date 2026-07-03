@@ -80,7 +80,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 ⚡ LUQMAN ON FIRE 🔥"""
     await update.message.reply_text(start_text)
 
-async def     menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     menu_text = f"""
 💀 {BOT_NAME} 💀
 👑 Owner: {OWNER_NAME}
@@ -105,8 +105,8 @@ async def     menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 👑 OWNER SYSTEM
 /alive, /ping, /owner
 """
-
-    await update.message.reply_text(wm(menu_text), parse_mode="Markdown")
+    await update.message.reply_text(menu_text)
+    
 
 async def alive_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(wm("🤖 **LUQMAN X MD** ipo hai na inafanya kazi kikamilifu! ✅"), parse_mode="Markdown")
