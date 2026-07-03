@@ -7,7 +7,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 # --- CONFIGURATION ---
 BOT_NAME = "𓊈𒆜꯭𝆭̽ 𝐋ʋ̽զϻ̈̐𝛂ƞ̄ 𝛅͜𝐉»ً𒆜꧂"
 OWNER_NAME = "𝙇𝙐𝙌𝙈𝘼Ν 𝙎𝙅"
-OWNER_ID = 255678716839  # ID yako ya namba ya Telegram
+OWNER_ID = 7847425637  # ID yako ya namba ya Telegram
 TOKEN = "8712244204:AAHeCNc8PfPFk_ifL78odGuyQEQzgkX8XWc"
 
 MODE = "public"
