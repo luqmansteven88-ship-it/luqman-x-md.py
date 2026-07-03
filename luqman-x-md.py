@@ -420,10 +420,10 @@ def main():
     app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_incoming_messages))
     app.add_handler(MessageHandler(filters.COMMAND, unknown_command))
 
-    print("Bot imewashwa rasmi...")
     app.run_polling(
-    poll_interval=2,
-    timeout=30,
+    poll_interval=1,
+    timeout=60,
+    bootstrap_retries=-1,
     drop_pending_updates=True,
     allowed_updates=Update.ALL_TYPES
     )
