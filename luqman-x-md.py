@@ -80,7 +80,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 ⚡ LUQMAN ON FIRE 🔥"""
     await update.message.reply_text(start_text)
 
-async def     menu_text = f"""
+async def     menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    menu_text = f"""
 💀 {BOT_NAME} 💀
 👑 Owner: {OWNER_NAME}
 🌍 Country: Tanzania
