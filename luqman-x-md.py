@@ -386,46 +386,38 @@ async def handle_incoming_messages(update: Update, context: ContextTypes.DEFAULT
 def main():
     app = Application.builder().token(TOKEN).build()
 
-    # Core commands
+    # Hizi ndizo handlers zinazofanya bot isikie amri
     app.add_handler(CommandHandler("start", start_command))
     app.add_handler(CommandHandler("menu", menu_command))
     app.add_handler(CommandHandler("alive", alive_command))
     app.add_handler(CommandHandler("ping", ping_command))
     app.add_handler(CommandHandler("owner", owner_command))
     app.add_handler(CommandHandler("id", id_command))
-    
-    # Amri za Michezo na Manjonjo Mapya
     app.add_handler(CommandHandler("slots", slots_command))
     app.add_handler(CommandHandler("dice", dice_command))
     app.add_handler(CommandHandler("dart", dart_command))
     app.add_handler(CommandHandler("football", football_command))
     app.add_handler(CommandHandler("love", love_command))
     app.add_handler(CommandHandler("joke", joke_command))
-    
-    # Moderation
     app.add_handler(CommandHandler("ban", ban_command))
     app.add_handler(CommandHandler("unban", unban_command))
     app.add_handler(CommandHandler("mute", mute_user_command))
     app.add_handler(CommandHandler("unmute", unmute_user_command))
     app.add_handler(CommandHandler("warn", warn_command))
     app.add_handler(CommandHandler("kick", kick_command))
-    
-    # Group settings
     app.add_handler(CommandHandler("antilink", antilink_command))
     app.add_handler(CommandHandler("antisticker", antisticker_command))
     app.add_handler(CommandHandler("mute_group", mute_group_command))
     app.add_handler(CommandHandler("admins", admins_command))
     app.add_handler(CommandHandler("ginfo", ginfo_command))
 
-    # Message Handlers na Text Filters
+    # Message Handlers
     app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_incoming_messages))
-    
-    # Amri zisizojulikana (Unknown commands)
     app.add_handler(MessageHandler(filters.COMMAND, unknown_command))
 
-    # Kuwasha Bot
-    print("Bot imewashwa rasmi... Run polling...")
+    print("Bot imewashwa rasmi...")
     app.run_polling()
+  
 
 if __name__ == '__main__':
     main()
