@@ -42,7 +42,7 @@ OWNER_WHATSAPP = "+255678716839"
 # IMPORTANT:
 # Put your NEW token in an environment variable named BOT_TOKEN.
 # Never paste your token into this file.
-TOKEN = os.getenv("​8712244204:AAHeCNc8PfPFk_ifL78odGuyQEQzgkX8XWc")
+TOKEN = os.getenv("​BOT_TOKEN")
 
 DATA_FILE = Path("luqman_data.json")
 MODE = "public"
