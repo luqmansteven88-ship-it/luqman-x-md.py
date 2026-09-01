@@ -1,2 +1,2 @@
-python-telegram-bot==21.10
-anyio==4.4.0
+python-telegram-bot[job-queue]==22.8
+qrcode[pil]>=8.2
