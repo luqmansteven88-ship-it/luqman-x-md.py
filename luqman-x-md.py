@@ -42,7 +42,7 @@ OWNER_WHATSAPP = "+255678716839"
 # IMPORTANT:
 # Put your NEW token in an environment variable named BOT_TOKEN.
 # Never paste your token into this file.
-TOKEN = os.getenv("​BOT_TOKEN")
+TOKEN = "8712244204:AAGwbH3Y0aNd4ssgkpqWFD7gjRppgTXCT0M"
 
 DATA_FILE = Path("luqman_data.json")
 MODE = "public"
@@ -1600,11 +1600,6 @@ def register_handlers(app):
 
 
 def main():
-    if not TOKEN:
-        raise RuntimeError(
-            "BOT_TOKEN is not set. Set the BOT_TOKEN environment variable before starting the bot."
-        )
-
     if not OWNER_ID:
         raise RuntimeError("Set OWNER_ID in the configuration before starting the bot.")
 
