@@ -363,6 +363,18 @@ async def menu_command(update, context):
         parse_mode=ParseMode.HTML,
         reply_markup=main_menu_keyboard(),
     )
+async def start_command(update, context):
+    text = (
+        "🤖 <b>LUQMAN X MD</b>\n\n"
+        "Welcome! Your Telegram assistant is online.\n\n"
+        "Use /menu to open the control panel."
+    )
+
+    await update.message.reply_text(
+        footer(text),
+        parse_mode=ParseMode.HTML,
+        reply_markup=main_menu_keyboard(),
+    )
 
 
 async def alive_command(update, context):
