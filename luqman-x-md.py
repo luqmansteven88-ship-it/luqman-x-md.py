@@ -159,20 +159,16 @@ async def bot_is_admin(update, context):
 
 
 async def require_control(update, context):
-    if not is_owner_or_sudo(update.effective_user.id):
-        await update.effective_message.reply_text(
-            footer("⛔ <b>Owner/Sudo only.</b>"),
-            parse_mode=ParseMode.HTML,
-        )
-        return False
     if update.effective_chat.type not in ("group", "supergroup"):
         await update.effective_message.reply_text(
             footer("ℹ️ This command is designed for groups."),
             parse_mode=ParseMode.HTML,
         )
         return False
+
     if not await bot_is_admin(update, context):
         return False
+
     return True
 
 
