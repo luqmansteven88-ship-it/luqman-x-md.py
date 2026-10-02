@@ -1987,7 +1987,7 @@ def register_handlers(app):
     app.add_handler(MessageHandler(filters.COMMAND, unknown_command), group=1)
 
 def main():
-    if TOKEN == "8712244204:AAGwbH3Y0aNd4ssgkpqWFD7gjRppgTXCT0M":
+    if TOKEN == "8712244204:AAEvEdORCg1bx3U77CFup0nMeDJkwDjof_g":
         raise RuntimeError("Weka Telegram bot token yako kwenye variable TOKEN.")
     app = (
         Application.builder()
