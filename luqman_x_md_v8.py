@@ -1987,20 +1987,26 @@ def register_handlers(app):
     app.add_handler(MessageHandler(filters.COMMAND, unknown_command), group=1)
 
 def main():
-    if TOKEN == "8712244204:AAEvEdORCg1bx3U77CFup0nMeDJkwDjof_g":
-        raise RuntimeError("Weka Telegram bot token yako kwenye variable TOKEN.")
     app = (
         Application.builder()
         .token(TOKEN)
         .post_init(post_init)
         .build()
     )
+
     # Track all messages in an earlier handler group.
     app.add_handler(MessageHandler(filters.ALL, track_all_messages, block=False), group=-1)
+
     register_handlers(app)
     app.add_error_handler(error_handler)
+
     logger.info("%s v%s starting in %s mode", BOT_NAME, VERSION, MODE)
-    app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
+
+    app.run_polling(
+        allowed_updates=Update.ALL_TYPES,
+        drop_pending_updates=True
+    )
+
 
 if __name__ == "__main__":
     main()
